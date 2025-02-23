@@ -24,7 +24,7 @@ func run(filenames []string, op string, column int, out io.Writer) error {
 	case "avg":
 		opFunc = avg
 	default:
-		return fmt.Errorf("%w: %d", ErrInvalidOperation, op)
+		return fmt.Errorf("%w: %s", ErrInvalidOperation, op)
 	}
 
 	consolidate := make([]float64, 0)
